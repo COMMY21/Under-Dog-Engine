@@ -2,6 +2,7 @@
 
 #include "Core.h"
 
+
 namespace Underdog
 {
 	class UD_API Application

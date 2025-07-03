@@ -4,6 +4,9 @@
     <Filter Include="UnderDog">
       <UniqueIdentifier>{9D50BCF1-891D-17FD-B236-05A59E624C8B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UnderDog\Events">
+      <UniqueIdentifier>{E1899768-4D15-052D-5626-8821C230612D}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\UnderDog.h" />
@@ -16,9 +19,22 @@
     <ClInclude Include="src\UnderDog\EntryPoint.h">
       <Filter>UnderDog</Filter>
     </ClInclude>
+    <ClInclude Include="src\UnderDog\Events\ApplicationEvents.h">
+      <Filter>UnderDog\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UnderDog\Events\Event.h">
+      <Filter>UnderDog\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UnderDog\Events\KeyEvent.h">
+      <Filter>UnderDog\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UnderDog\Events\MouseEvent.h">
+      <Filter>UnderDog\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\UnderDog\Log.h">
       <Filter>UnderDog</Filter>
     </ClInclude>
+    <ClInclude Include="src\udpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\UnderDog\Application.cpp">
@@ -27,5 +43,6 @@
     <ClCompile Include="src\UnderDog\Log.cpp">
       <Filter>UnderDog</Filter>
     </ClCompile>
+    <ClCompile Include="src\udpch.cpp" />
   </ItemGroup>
 </Project>

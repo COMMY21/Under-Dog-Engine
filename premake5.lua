@@ -10,6 +10,11 @@ workspace "UnderDogEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "UnderDog/vendor/GLFW/include"
+
+include "UnderDog/vendor/GLFW"
+
 project "UnderDog"
 	location "UnderDog"
 	kind "SharedLib"
@@ -17,6 +22,9 @@ project "UnderDog"
 
 	targetdir ("bin" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int" .. outputdir .. "/%{prj.name}")
+
+	pchheader "udpch.h"
+	pchsource "UnderDog/src/udpch.cpp"
 
 	files
 	{
@@ -26,7 +34,15 @@ project "UnderDog"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{prj.name}/src",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

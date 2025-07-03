@@ -1,3 +1,6 @@
 [submodule "UnderDog/vendor/spdlog"]
 	path = UnderDog/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "UnderDog/vendor/GLFW"]
+	path = UnderDog/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
