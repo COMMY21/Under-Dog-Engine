@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
     <Filter Include="UnderDog">
       <UniqueIdentifier>{9D50BCF1-891D-17FD-B236-05A59E624C8B}</UniqueIdentifier>
     </Filter>
@@ -9,6 +15,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\UnderDog.h" />
     <ClInclude Include="src\UnderDog\Application.h">
       <Filter>UnderDog</Filter>
@@ -31,13 +40,31 @@
     <ClInclude Include="src\UnderDog\Events\MouseEvent.h">
       <Filter>UnderDog\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\UnderDog\Layer.h">
+      <Filter>UnderDog</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UnderDog\LayerStack.h">
+      <Filter>UnderDog</Filter>
+    </ClInclude>
     <ClInclude Include="src\UnderDog\Log.h">
+      <Filter>UnderDog</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UnderDog\Window.h">
       <Filter>UnderDog</Filter>
     </ClInclude>
     <ClInclude Include="src\udpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\UnderDog\Application.cpp">
+      <Filter>UnderDog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnderDog\Layer.cpp">
+      <Filter>UnderDog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnderDog\LayerStack.cpp">
       <Filter>UnderDog</Filter>
     </ClCompile>
     <ClCompile Include="src\UnderDog\Log.cpp">

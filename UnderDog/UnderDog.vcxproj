@@ -84,7 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/MDd /utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -111,7 +111,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/MD /utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -139,7 +139,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/MD /utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -155,6 +155,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\UnderDog.h" />
     <ClInclude Include="src\UnderDog\Application.h" />
     <ClInclude Include="src\UnderDog\Core.h" />
@@ -163,11 +164,17 @@
     <ClInclude Include="src\UnderDog\Events\Event.h" />
     <ClInclude Include="src\UnderDog\Events\KeyEvent.h" />
     <ClInclude Include="src\UnderDog\Events\MouseEvent.h" />
+    <ClInclude Include="src\UnderDog\Layer.h" />
+    <ClInclude Include="src\UnderDog\LayerStack.h" />
     <ClInclude Include="src\UnderDog\Log.h" />
+    <ClInclude Include="src\UnderDog\Window.h" />
     <ClInclude Include="src\udpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\UnderDog\Application.cpp" />
+    <ClCompile Include="src\UnderDog\Layer.cpp" />
+    <ClCompile Include="src\UnderDog\LayerStack.cpp" />
     <ClCompile Include="src\UnderDog\Log.cpp" />
     <ClCompile Include="src\udpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

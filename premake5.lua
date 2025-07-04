@@ -10,6 +10,7 @@ workspace "UnderDogEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to the root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "UnderDog/vendor/GLFW/include"
 
@@ -19,6 +20,7 @@ project "UnderDog"
 	location "UnderDog"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "Off"
 
 	targetdir ("bin" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int" .. outputdir .. "/%{prj.name}")
@@ -67,17 +69,29 @@ project "UnderDog"
 
 
 	filter "configurations:Debug"
-		buildoptions "/utf-8"
+		buildoptions
+		{
+			"/MDd",
+			"/utf-8"
+		}
 		defines "UD_DEBUG"
 		symbols "On"
 
 	filter "configurations:Release"
-		buildoptions "/utf-8"
+		buildoptions
+		{
+			"/MD",
+			"/utf-8"
+		}
 		defines "UD_RELEASE"
 		optimize "On"
 
 	filter "configurations:Dist"
-		buildoptions "/utf-8"
+		buildoptions 
+		{
+			"/MD",
+			"/utf-8"
+		}
 		defines "UD_DIST"
 		optimize "On"
 
@@ -118,16 +132,28 @@ project "Sandbox"
 
 		
 	filter "configurations:Debug"
-		buildoptions "/utf-8"
+		buildoptions
+		{
+			"/MDd",
+			"/utf-8"
+		}
 		defines "UD_DEBUG"
 		symbols "On"
 
 	filter "configurations:Release"
-		buildoptions "/utf-8"
+		buildoptions
+		{
+			"/MD",
+			"/utf-8"
+		}
 		defines "UD_RELEASE"
 		optimize "On"
 
 	filter "configurations:Dist"
-		buildoptions "/utf-8"
+		buildoptions
+		{
+			"/MD",
+			"/utf-8"
+		}
 		defines "UD_DIST"
 		optimize "On"

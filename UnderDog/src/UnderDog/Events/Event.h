@@ -39,18 +39,20 @@ namespace Underdog
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
-		virtual std::string ToString() const { return GetName(); }
+		virtual std::string ToString() const { return std::string(GetName()); }
 
 		inline bool IsInCategory(EventCategory category)
 		{
 			return GetCategoryFlags() & category;
 		}
 
+		inline bool Handled() const { return m_Handled; }
+		
 	protected:
 		bool m_Handled = false;
 	};
 
-	class EventDispatcher
+	class EventDispatcher 
 	{
 		template<typename T>
 		using EventFn = std::function<bool(T&)>;

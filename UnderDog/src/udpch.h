@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "UnderDog/Log.h"
+
 
 #ifdef UD_PLATFORM_WINDOWS
 	#include "Windows.h"
